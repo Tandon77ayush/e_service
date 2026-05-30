@@ -1,0 +1,43 @@
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial;
+}
+
+
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background: #1f2937;
+}
+
+.sidebar a.active {
+  background: #2563eb;
+  color: white;
+}
+
+
+.main {
+  flex: 1;
+  background: #f5f7fb;
+  padding: 20px;
+}

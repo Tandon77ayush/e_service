@@ -1,0 +1,365 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
+  color: #1a1a2e;
+}
+
+/* ===== NAVBAR ===== */
+.provider-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a2e;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.provider-navbar h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.logout-btn:hover { background: #c0392b; }
+
+/* ===== CONTENT ===== */
+.provider-dashboard { min-height: 100vh; }
+
+.provider-content {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== SECTION ===== */
+.provider-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.provider-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.provider-section p {
+  margin-bottom: 0.4rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ===== SECTION HEADER (profile edit) ===== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.section-header h2 {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edit-btn {
+  background: #f0f4ff;
+  color: #3b5bdb;
+  border: 1px solid #c5d0f5;
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.edit-btn:hover { background: #dbe4ff; }
+
+/* ===== PROFILE FORM ===== */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: -0.4rem;
+}
+
+.profile-form .hint {
+  font-weight: 400;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #222;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: #3b5bdb;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.save-btn {
+  background: #3b5bdb;
+  color: white;
+  border: none;
+  padding: 0.55rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.save-btn:hover:not(:disabled) { background: #2f4ac7; }
+.save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.cancel-btn {
+  background: #f5f5f5;
+  color: #555;
+  border: 1.5px solid #ddd;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+.cancel-btn:hover { background: #e8e8e8; }
+
+.save-msg {
+  color: #2ecc71;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* ===== STATS GRID ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #f8f9ff;
+  border: 1.5px solid #e8ecff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stat-card.pending {
+  background: #fff8f0;
+  border-color: #ffe4b5;
+}
+
+.stat-card.completed {
+  background: #f0fff4;
+  border-color: #b5f5c8;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 500;
+}
+
+/* ===== BOOKING CARDS ===== */
+.provider-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.provider-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.2rem;
+}
+
+.provider-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.booking-meta {
+  font-size: 0.8rem !important;
+  color: #999 !important;
+  margin-top: 0.2rem !important;
+}
+
+.booking-note {
+  font-size: 0.82rem !important;
+  color: #888 !important;
+  font-style: italic;
+  margin-top: 0.2rem !important;
+}
+
+.accept-btn {
+  background: #3b5bdb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.accept-btn:hover { background: #2f4ac7; }
+
+.complete-btn {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.complete-btn:hover { background: #27ae60; }
+
+.done-badge {
+  background: #e8f8ef;
+  color: #27ae60;
+  border: 1px solid #b5f5c8;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.empty-text {
+  color: #bbb;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .provider-card { flex-direction: column; align-items: flex-start; }
+  .provider-navbar { padding: 1rem; }
+  .provider-navbar h2 { font-size: 1rem; }
+}
+
+/* ===== SERVICE FORM ===== */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.profile-form select {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #222;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.profile-form select:focus {
+  outline: none;
+  border-color: #3b5bdb;
+}
+
+.required {
+  color: #e74c3c;
+  font-size: 0.8rem;
+}
+
+/* ===== DELETE BUTTON ===== */
+.delete-btn {
+  background: #fff0f0;
+  color: #e74c3c;
+  border: 1px solid #ffc5c5;
+  padding: 0.45rem 0.9rem;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.delete-btn:hover { background: #ffe0e0; border-color: #e74c3c; }
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}
