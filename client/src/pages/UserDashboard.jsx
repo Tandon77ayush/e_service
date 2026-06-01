@@ -33,7 +33,7 @@ const UserDashboard = ({ goToBookings }) => {
       if (category) params.category = category;
       if (city) params.city = city;
 
-      const res = await axios.get("http://localhost:5000/api/services", {
+      const res = await axios.get("http://18.171.232.21:5000/api/services", {
         headers: { Authorization: `Bearer ${token}` },
         params,
       });
@@ -65,7 +65,7 @@ const UserDashboard = ({ goToBookings }) => {
     try {
       // step 1 — create razorpay order
       const orderRes = await axios.post(
-        "http://localhost:5000/api/payment/create-order",
+        "http://18.171.232.21:5000/api/payment/create-order",
         { serviceId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,7 +83,7 @@ const UserDashboard = ({ goToBookings }) => {
         handler: async (response) => {
           // step 3 — verify payment and create booking
           await axios.post(
-            "http://localhost:5000/api/payment/verify",
+            "http://18.171.232.21:5000/api/payment/verify",
             {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,

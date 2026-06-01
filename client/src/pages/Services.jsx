@@ -33,7 +33,7 @@ const UserDashboard = ({ goToBookings }) => {
       if (category) params.category = category;
       if (city) params.city = city;
 
-      const res = await axios.get("http://localhost:5000/api/services", {
+      const res = await axios.get("http://18.171.232.21:5000/api/services", {
         headers: { Authorization: `Bearer ${token}` },
         params,
       });
@@ -64,7 +64,7 @@ const UserDashboard = ({ goToBookings }) => {
   const bookService = async (serviceId) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/bookings/create",
+        "http://18.171.232.21:5000/api/bookings/create",
         {
           serviceId,
           date: new Date().toISOString().split("T")[0],

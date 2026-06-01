@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import "../styles/dashboard.css";
 
-const API = "http://localhost:5000";
+const API = "http://18.171.232.21:5000";
 
 const AdminDashboard = () => {
   const { logout } = useAuth();
