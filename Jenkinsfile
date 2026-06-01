@@ -2,7 +2,7 @@
 pipeline{
     agent { label 'dev'}
     stages{
-    stage('code copy'){
+    stage('code'){
         steps{
             script{
                 clone('https://github.com/Tandon77ayush/e_service.git', 'main')
