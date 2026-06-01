@@ -11,7 +11,7 @@ const AdminUsers = () => {
 
   const fetchUsers = async () => {
     const res = await axios.get(
-      "http://18.171.232.21:5000/api/admin/users",
+      "http://13.40.34.244:5000/api/admin/users",
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -20,7 +20,7 @@ const AdminUsers = () => {
 
   const toggleBlock = async (id) => {
     await axios.put(
-      `http://18.171.232.21:5000/api/admin/users/block/${id}`,
+      `http://13.40.34.244:5000/api/admin/users/block/${id}`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );
