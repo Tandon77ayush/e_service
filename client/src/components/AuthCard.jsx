@@ -28,6 +28,7 @@ const AuthCard = () => {
     password: "",
     otp: "",
     role: "user",
+    contactNumber: "",
   });
 
 
@@ -82,6 +83,11 @@ const AuthCard = () => {
   const handleSendOTP = async (e) => {
 
     e.preventDefault();
+
+    if (!/^\d{10}$/.test(formData.contactNumber)) {
+      setMessage("Please enter a valid 10-digit contact number");
+      return;
+    }
 
     try {
 
@@ -306,7 +312,19 @@ const AuthCard = () => {
           />
 
 
-          
+          <label>Contact Number</label>
+
+          <input
+            type="tel"
+            name="contactNumber"
+            placeholder="Enter 10-digit mobile number"
+            value={formData.contactNumber}
+            onChange={handleChange}
+            maxLength={10}
+            pattern="[0-9]{10}"
+          />
+
+
           {!otpSent ? (
 
             <button

@@ -14,7 +14,7 @@ export const createService = async (req, res) => {
       provider: req.user._id,
     });
 
-    const populated = await service.populate("provider", "name email");
+    const populated = await service.populate("provider", "name email contactNumber");
     res.status(201).json(populated);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -37,7 +37,7 @@ export const getAllServices = async (req, res) => {
       filter.location = { $regex: city, $options: "i" };
     }
 
-    const services = await Service.find(filter).populate("provider", "name email");
+    const services = await Service.find(filter).populate("provider", "name email contactNumber");
     res.json(services);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -47,7 +47,7 @@ export const getAllServices = async (req, res) => {
 
 export const getServiceById = async (req, res) => {
   try {
-    const service = await Service.findById(req.params.id).populate("provider", "name email");
+    const service = await Service.findById(req.params.id).populate("provider", "name email contactNumber");
     if (!service) return res.status(404).json({ message: "Service not found" });
     res.json(service);
   } catch (error) {

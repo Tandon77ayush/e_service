@@ -5,9 +5,19 @@ import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
+    name: { 
+      type: String, 
+      required: true 
+    },
+
+    email: { 
+      type: String, 
+      required: true, 
+      unique: true },
+
+    password: { 
+      type: String, 
+      required: true },
 
     role: {
       type: String,
@@ -15,12 +25,34 @@ const userSchema = new mongoose.Schema(
       default: "user",
     },
 
-    isApproved: { type: Boolean, default: false },
-    isBlocked: { type: Boolean, default: false },
+    isApproved: { 
+      type: Boolean, 
+      default: false 
+    },
 
-    bio: { type: String, default: "" },
-    experience: { type: String, default: "" },
-    skills: { type: [String], default: [] },
+    isBlocked: { 
+      type: Boolean, 
+      default: false 
+    },
+
+    contactNumber: {
+       type: String, 
+       default: "" 
+      },
+
+    bio: { 
+      type: String, 
+      default: "" 
+    },
+
+    experience: { 
+      type: String, 
+      default: "" 
+    },
+    skills: { 
+      type: [String], 
+      default: [] 
+    },
   },
   { timestamps: true }
 );

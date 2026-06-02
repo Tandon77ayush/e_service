@@ -279,6 +279,13 @@
   margin-top: 2px;
 }
 
+.service-contact {
+  font-size: 12px;
+  color: #4f8ef7;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
 .service-desc {
   font-size: 13px;
   color: #94a3b8;

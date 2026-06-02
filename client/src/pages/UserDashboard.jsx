@@ -216,6 +216,12 @@ const UserDashboard = ({ goToBookings }) => {
                           <span>{s.provider.email}</span>
                         </p>
                       )}
+                      {s.provider?.contactNumber && (
+                        <p className="provider-detail-item">
+                          <span className="provider-detail-icon">📞</span>
+                          <span>{s.provider.contactNumber}</span>
+                        </p>
+                      )}
                     </div>
 
                     <div className="service-bottom">

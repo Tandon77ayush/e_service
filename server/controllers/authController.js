@@ -90,6 +90,7 @@ export const registerUser = async (req, res) => {
       password,
       otp,
       role,
+      contactNumber,
     } = req.body;
 console.log("REGISTER BODY:", { name, email, otp, role });
 
@@ -121,6 +122,8 @@ console.log("CREATING USER...");
       password,
 
       role,
+
+      contactNumber,
 
       isApproved:
         role === "provider"
