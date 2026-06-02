@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import "../styles/provider.css";
 
-const API = "http://13.40.34.244:5000/api"; 
+const API = "http://18.175.48.89:5000/api"; 
 
 const ProviderDashboard = () => {
   const { user, logout, updateUser } = useAuth();

@@ -17,7 +17,7 @@ const MyBookings = ({ setPage }) => {
   const loadBookings = async () => {
     try {
       const res = await axios.get(
-        "http://13.40.34.244:5000/api/bookings/user",
+        "http://18.175.48.89:5000/api/bookings/user",
         {
           headers: {
             Authorization: `Bearer ${token}`,
