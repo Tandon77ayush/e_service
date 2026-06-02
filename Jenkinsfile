@@ -45,13 +45,13 @@ pipeline{
             emailext (
                 subject: "neighborhand pipeline",
                 to: "tandonayush350@gmail.com",
-                body: "pipeline built SUCCESSFULLY"
+                body: "Congratulations!!! pipeline built SUCCESSFULLY"
             ) }
         failure{
             emailetx(
                 subject: "neighborhand pipeline",
                 to: "tandonayush350@gmail.com",
-                body: "pipeline build was UNSUCCESSFULL"
+                body: "OOPS!!! pipeline build was UNSUCCESSFULL"
             )
         }
         
