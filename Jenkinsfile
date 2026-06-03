@@ -42,17 +42,10 @@ pipeline{
     }
     post{
         success{
-            emailext (
-                subject: "neighborhand pipeline",
-                to: "tandonayush350@gmail.com",
-                body: "Congratulations!!! pipeline built SUCCESSFULLY"
-            ) }
+            mail("Neighborhand pipeline status"' "tandonayush350@gmail.com", "CONGRATS!!!! pipeline built SUCCESSFULLY")
+                 }
         failure{
-            emailetx(
-                subject: "neighborhand pipeline",
-                to: "tandonayush350@gmail.com",
-                body: "OOPS!!! pipeline build was UNSUCCESSFULL"
-            )
+            mail("Neighborhand pipeline status", "tandonayush350@gmail.com", "SORRY!! pipeline build is FAILED")
         }
         
 }
