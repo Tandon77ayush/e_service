@@ -42,7 +42,7 @@ pipeline{
     }
     post{
         success{
-            mail("Neighborhand pipeline status"' "tandonayush350@gmail.com", "CONGRATS!!!! pipeline built SUCCESSFULLY")
+            mail("Neighborhand pipeline status", "tandonayush350@gmail.com", "CONGRATS!!!! pipeline built SUCCESSFULLY")
                  }
         failure{
             mail("Neighborhand pipeline status", "tandonayush350@gmail.com", "SORRY!! pipeline build is FAILED")
